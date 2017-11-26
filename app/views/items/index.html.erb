@@ -1,23 +1,36 @@
+<aside class="sub">
+<section class="lfe-menu">
+  <ul class="side-menu">
+    <li>Mypage
+    </li>
+    <li>Purchase history
+    </li>
+    <li><a href="/items">Your items</a>
+    </li>
+    <li>Your review
+    </li>
+  </ul>
+</section>
+</aside>
+
 <div class="contents">
-<% if signed_in? %>
-<div>
-  <ul>
-    <% @items.each do |item| %>
-    <li>
-      <%= item.title %>
-  </li>
-  <% end %>
-</ul>
-</div>
-
-<% else %>
-
-<div>
-<% @items.each do |item|  %>
-<p><%= item.title %></p>
-<% end %>
-<% end %>
-
-<%= link_to "Upload items", new_item_path, method: :get %>
-</div>
+    <table>
+      <thead>
+        <tr>title
+        </tr>
+        <tr>price
+        </tr>
+      <tbody>
+        <% current_user.items.each do |item| %>
+        <tr>
+          <td>
+            <a href="/items/"><%= item.title %>
+          </td>
+          <td>
+            <%= item.price %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>

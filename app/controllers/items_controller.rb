@@ -12,13 +12,12 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     Item.create(item_params)
-    redirect_to controller: :items, action: :index
+    redirect_to controller: :timelines, action: :index
   end
 
   private
   def item_params
-    params.require(:item).permit(:id, :title, :description, :price, :stock, :image)
+    params.require(:item).permit(:id, :title, :description, :price, :stock, :image).merge(user_id: current_user.id)
   end
 end
