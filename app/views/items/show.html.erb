@@ -1,4 +1,40 @@
 <div class="contents">
-  <%= @item.all %>
+  <div class="panel">
+  <%= @item.image %>
+  <%= @item.title %>
+  <%= @item.price %>
+</div>
+
+<% if @item.user_id== current_user.id %>
+<%= link_to "Edit", edit_item_path, method: :get %>
+
+<% end %>
+<div class="form">
+<%= form_tag('/comments', method: :post) do %>
+  <div class="field">
+    <textarea name="content"></textarea>
+  </div>
+  <%= hidden_field_tag(:item_id, @item.id) %>
+  <div class="field">
+    <input type="submit" value="Leave comment">
+  </div>
+<% end %>
+
+<div class="comment">
+  <% @comments.each do |comment| %>
+  <% if comment.item_id== @item.id %>
+  <ul>
+    <li>
+      <%= comment.user.nickname %>
+    </li>
+    <li>
+      <%= comment.content %>
+    </li>
+
+  </ul>
+  <% end %>
+<% end %>
+</div>
+</div>
 
 </div>

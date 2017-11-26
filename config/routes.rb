@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "timelines#index"
   resources :users, only: :show
+  resources :comments, only: :create
   resources :timelines
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.

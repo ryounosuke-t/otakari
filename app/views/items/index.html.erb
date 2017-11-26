@@ -24,7 +24,7 @@
         <% current_user.items.each do |item| %>
         <tr>
           <td>
-            <a href="/items/"><%= item.title %>
+            <a href="/items/<%= item.id %>"><%= item.title %></a>
           </td>
           <td>
             <%= item.price %>
