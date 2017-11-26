@@ -9,11 +9,26 @@
 <body>
 
 <header>
-  <%= link_to '新規登録', new_user_registration_path, method: :get %>
-  <%= link_to 'ログイン', new_user_session_path, method: :get %>
+  <%= link_to "Home", root_path, method: :get, class: "css3button" %>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Account', "http://localhost:3000/users/#{current_user.id}", method: :get %>
+   <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+   <%= link_to 'sign up', new_user_registration_path, method: :get %>
+   <%= link_to 'sign in', new_user_session_path, method: :get %>
+  <% end %>
   </header>
 
 <%= yield %>
+
+  <footer>
+    <div class="footer">
+      Copyright @Ryounosuke.Takeuchi
+    </div>
+  </footer>
+
+
 
 </body>
 </html>

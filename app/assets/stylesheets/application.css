@@ -1,3 +1,49 @@
+
+
+/* button design*/
+
+.css3button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  padding: 8px 20px;
+  background: -moz-linear-gradient(
+    top,
+    #afd9fa 0%,
+    #afd9fa);
+  background: -webkit-gradient(
+    linear, left top, left bottom,
+    from(#afd9fa),
+    to(#afd9fa));
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  border: 0px solid #003366;
+  -moz-box-shadow:
+    0px 1px 0px rgba(000,000,000,0),
+    inset 0px 0px 0px rgba(255,255,255,0.9);
+  -webkit-box-shadow:
+    0px 1px 0px rgba(000,000,000,0),
+    inset 0px 0px 0px rgba(255,255,255,0.9);
+  box-shadow:
+    0px 1px 0px rgba(000,000,000,0),
+    inset 0px 0px 0px rgba(255,255,255,0.9);
+  text-shadow:
+    0px 0px 0px rgba(000,000,000,0),
+    0px 0px 0px rgba(255,255,255,0);
+}
+
+
+.footer{
+  height:42px; text-align:center;
+  clear:both;         /*回り込みを解除する*/
+  background-image:url("images/bg_footer.jpg"); /*フッタ部分の背景画像*/
+  background-repeat:no-repeat;      /*背景画像を繰り返さない*/
+  background-color:#cccccc;
+
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

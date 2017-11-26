@@ -1,19 +1,17 @@
 <h1>登録情報</h1>
 
-<%= form_for current_user do |f| %>
-<table>
-  <th>
-    <tr>プロフィール</tr>
-  </th>
-
+<%= form_tag("/users", method: :patch) do %>
 
 <div class="field">
-  <%= f.label :画像をアップロード %><br>
-  <%= f.file_field :avatar %>
+  <input type="file" name="image">
+
+</div>
+
+<div class="field">
+  <textarea name="profile"></textarea>
 </div>
 
 <div class="form-group">
-  <%= f.submit "更新" %>
+  <input type="submit" value="保存">
 </div>
-
 <% end %>

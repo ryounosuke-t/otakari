@@ -5,6 +5,5 @@ class AddProfileToUsers < ActiveRecord::Migration
     add_column :users, :review_id, :integer
     add_column :users, :phone_number, :text
 
-
   end
 end
