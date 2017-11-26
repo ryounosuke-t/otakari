@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<header>
+  <%= link_to '新規登録', new_user_registration_path, method: :get %>
+  <%= link_to 'ログイン', new_user_session_path, method: :get %>
+  </header>
+
 <%= yield %>
 
 </body>
