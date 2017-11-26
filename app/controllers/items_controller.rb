@@ -7,13 +7,18 @@ class ItemsController < ApplicationController
     @items=Item.new
   end
 
+  def show
+    @item=Item.find(params[:id])
+  end
 
   def create
-    @items=Item.create(item_params)
+    binding.pry
+    Item.create(item_params)
+    redirect_to controller: :items, action: :index
   end
 
   private
   def item_params
-    params.permit(:title, :description, :price, :stock, :image)
+    params.require(:item).permit(:id, :title, :description, :price, :stock, :image)
   end
 end
