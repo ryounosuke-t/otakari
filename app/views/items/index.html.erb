@@ -1,6 +1,22 @@
+
+<% if signed_in? %>
+<div>
+  <ul>
+    <% @items.each do |item| %>
+    <li>
+      <%= item.title %>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+<% else %>
+
 <div>
 <% @items.each do |item|  %>
 <p><%= item.title %></p>
 <% end %>
-<%= link_to "出品する", new_item_path, method: :get %>
+<% end %>
+
+<%= link_to "Upload items", new_item_path, method: :get %>
 </div>
