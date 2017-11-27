@@ -1,0 +1,29 @@
+<div class="contents">
+
+<%= form_for @item do |f| %>
+
+  <div class="field">
+    <%= f.label :"item's name" %>
+    <%= f.text_field :title, placeholder: "#{@item.title}" %>
+  </div>
+  <div class="field">
+    <%= f.label :description  %>
+    <%= f.text_field :description, placeholder: "#{@item.description}" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :price  %>
+    <%= f.number_field :price, placeholder: "#{@item.price}" %>
+  </div>
+    <div class="field">
+    <%= f.label :stock  %>
+    <%= f.number_field :stock, placeholder: "#{@item.stock}" %>
+  </div>
+
+  <div class="field">
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <%= f.submit "Save" %>
+  </div>
+
+<% end %>
+</div>

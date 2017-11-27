@@ -18,6 +18,16 @@ class ItemsController < ApplicationController
     redirect_to controller: :timelines, action: :index
   end
 
+  def edit
+    @item=Item.find(params[:id])
+  end
+
+  def update
+    item=Item.find(params[:id])
+    item.update(item_params)
+    redirect_to items_path
+  end
+
   private
   def item_params
     params.require(:item).permit(:id, :title, :description, :price, :stock, :image).merge(user_id: current_user.id)
