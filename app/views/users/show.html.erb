@@ -1,3 +1,33 @@
+<div class="formFooter">
+  <!-- This section gets pushed to the left side-->
+  <div class="formFooter__section">
+    <div class="formFooter__item formFooterFeedback">
+      <div class="fa fa-spinner formFooterSpinner"></div>
+    </div>
+  </div>
+  <!-- This section gets pushed to the right side-->
+  <div class="formFooter__section">
+    <% if user_signed_in? %>
+    <div >
+    <%= link_to 'Account', "http://localhost:3000/users/#{current_user.id}", method: :get, class: "formFooter__item button " %>
+  </div>
+  <div>
+   <%= link_to 'logout', destroy_user_session_path, method: :delete, class: "formFooter__item button" %>
+ </div>
+  <% else %>
+    <div>
+   <%= link_to 'sign up', new_user_registration_path, method: :get, class: "formFooter__item button " %>
+ </div>
+   <div>
+   <%= link_to 'sign in', new_user_session_path, method: :get, class: "formFooter__item button " %>
+ </div>
+  <% end %>
+
+    </div>
+    <div class="formFooter__item button">
+    </div>
+
+
 <aside class="sub">
 <section class="lfe-menu">
   <ul class="side-menu">
@@ -16,7 +46,7 @@
 <div class="grid">
 <h1>Profile information</h1>
 
-<%= form_tag("/users", method: :patch) do %>
+<%= form_tag("/users/#{current_user.id}", method: :patch) do %>
 
 <div class="field">
   <input type="file" name="image">
@@ -24,7 +54,7 @@
 </div>
 
 <div class="field">
-  <textarea name="profile">profile</textarea>
+  <textarea name="profile"><%= current_user.profile %></textarea>
 </div>
 
 <div class="form-group">

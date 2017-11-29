@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "timelines#index"
-  resources :users, only: :show
+  resources :users, only: [:show, :update]
   resources :comments, only: :create
   resources :timelines
   resources :items

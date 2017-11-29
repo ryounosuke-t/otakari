@@ -1,44 +1,34 @@
-<div class="contents">
-<% if signed_in? %>
-<div>
-  <table>
-    <thead>
-      <th>
-        <tr>title
-        </tr>
-        <tr>
-          description
-        </tr>
-        <tr>
-          price
-        </tr>
-      </th>
-    </thead>
-    <tbody>
-    <% @items.each do |item| %>
-    <tr>
-    <td>
-      <a href="/items/<%= item.id %>"><%= item.title %>
-  </td>
-  <td>
-      <%= item.description %>
-  </td>
-  <td>
-      <%= item.price %>
-  </td>
-</tr>
-  <% end %>
-</table>
+  <div class="container">
+
+  </div>
+
+  <h1 class="index">Pick up items</h1>
+
+<div class="cover">
+  <% @items.each do |item| %>
+   <div class="box">
+    <a href="/items/<%= item.id %>" >
+    <div class="box_image">
+      <%= image_tag "image/sample.png" %>
+    </div>
+  </a>
+    <div class="box_body">
+    <h3 class="box_items_name">  <%= item.title %></h3>
+       <div class="box_price">
+        <%= item.price %>
+       </div>
+     </div>
+   </div>
+
+   <% end %>
 </div>
 
-<% else %>
 
-<div>
-<% @items.each do |item|  %>
-<p><%= item.title %></p>
-<% end %>
-<% end %>
 
+
+
+<div class="upload_items">
 <%= link_to "Upload items", new_item_path, method: :get %>
 </div>
 </div>
+
