@@ -1,36 +1,25 @@
-<aside class="sub">
-<section class="lfe-menu">
-  <ul class="side-menu">
-    <li>Mypage
-    </li>
-    <li>Purchase history
-    </li>
-    <li><a href="/items">Your items</a>
-    </li>
-    <li>Your review
-    </li>
-  </ul>
-</section>
-</aside>
+  <div class="login_no_account">
+    <h2>All listed items</h2>
+  </div>
 
-<div class="contents">
-    <table>
-      <thead>
-        <tr>title
-        </tr>
-        <tr>price
-        </tr>
-      <tbody>
-        <% current_user.items.each do |item| %>
-        <tr>
-          <td>
-            <a href="/items/<%= item.id %>"><%= item.title %></a>
-          </td>
-          <td>
-            <%= item.price %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-</div>
+    <div class="mypage_content">
+    <div class="mypage_body">
+    <ul class="mypage_item_list">
+    <% current_user.items.each do |item| %>
+      <li>
+        <a href="/items/<%= item.id %>">
+          <%= image_tag "user_background.jpg", class:"mypage_item_image" %>
+          <div class="mypage_item_body">
+            <%= item.title %><br>
+            <div class="mypage_item_price">
+            ¥ <%= item.price %>
+          </div>
+          </div>
+          <i class="arrow icon-arrow-right"></i>
+        </a>
+      </li>
+    <% end %>
+
+    </ul>
+  </div>
+  </div>

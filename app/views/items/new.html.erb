@@ -10,12 +10,12 @@
 <%= form_for @items do |f| %>
 
 <div class="field">
-  <%= f.label :"Item image" %><br><br>
+  <%= f.label :"Item's image" %><br><br>
   <%= f.file_field :image %>
 </div>
 
 <div class="field">
-  <%= f.label :"Items's name" %><br><br>
+  <%= f.label :"Item's name" %><br><br>
   <%= f.text_field :title, placeholder:"Item's name", class:"input-text" %>
 </div>
 
@@ -34,7 +34,7 @@
   <%= f.number_field :stock, placeholder: "ex.3", class:"input-text" %>
 </div>
 <div class="field">
-  <%= f.submit "Upload", class:"save_button" %>
+  <%= f.submit "Sell your item", class:"sell_button" %>
 </div>
 
 <% end %>

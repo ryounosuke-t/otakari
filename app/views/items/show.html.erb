@@ -1,14 +1,56 @@
-<div class="contents">
-  <div class="panel">
-  <%= image_tag @item.image %>
-  <%= @item.title %>
-  <%= @item.price %>
-</div>
+<div class="item_box_container">
+    <h2 class="item_name"> <%= @item.title %> </h2>
+    <div class="item_image">
+        <%= image_tag @item.image %>
+    </div>
 
-<% if @item.user_id == current_user.id %>
-<%= link_to "Edit", edit_item_path, method: :get %>
+    <table class="item_detail">
+      <tbody>
+        <tr>
+          <th>
+            Shopper
+          </th>
+          <td>
+            <%= @item.user_id %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            item's detail
+          </th>
+          <td>
+            <%= @item.description %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+          </th>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <th>
+          </th>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="item_price_box">
+      <span class="item_price_word">
+        ¥ <%= @item.price %>
+      </span>
+    </div>
+    <div class="item_edit_button">
+    <% if @item.user_id == current_user.id %>
+<%= link_to "Edit", edit_item_path, method: :get, class:"edit_button" %>
 <% else %>
 <% end %>
+</div>
+
+</div>
+
 <div class="form">
 <%= form_tag('/comments', method: :post) do %>
   <div class="field">
@@ -37,4 +79,4 @@
 </div>
 </div>
 
-</div>
+

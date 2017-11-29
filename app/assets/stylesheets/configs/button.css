@@ -53,6 +53,35 @@
 
 }
 
+.sell_button{
+  cursor: pointer;
+  padding: 4px 90px;
+  color: #FFFFFF;
+  background-color: #ea352d;
+  font-size: 16px;
+  border: 1px solid #ea352d;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 40px;
+  margin:0 auto;
+  text-align: center;
+
+}
+
+.edit_button{
+  cursor: pointer;
+  padding: 10px 100px;
+  color: #FFFFFF;
+  background-color: #ea352d;
+  font-size: 16px;
+  border: 1px solid #ea352d;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 40px;
+  margin:0 auto;
+  text-align: center;
+
+}
 
 .arrow{
 position: relative;
@@ -76,10 +105,10 @@ vertical-align: middle;
 
 .icon-arrow-right::before{
 left: 3px;
-width: 4px;
-height: 4px;
-border-top: 2px solid #ccc;
-border-right: 2px solid #ccc;
+width: 8px;
+height: 8px;
+border-top: 2px solid black;
+border-right: 2px solid black;
 -webkit-transform: rotate(45deg);
 transform: rotate(45deg);
 }
