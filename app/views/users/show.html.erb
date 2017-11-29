@@ -1,64 +1,76 @@
-<div class="formFooter">
-  <!-- This section gets pushed to the left side-->
-  <div class="formFooter__section">
-    <div class="formFooter__item formFooterFeedback">
-      <div class="fa fa-spinner formFooterSpinner"></div>
-    </div>
-  </div>
-  <!-- This section gets pushed to the right side-->
-  <div class="formFooter__section">
-    <% if user_signed_in? %>
-    <div >
-    <%= link_to 'Account', "http://localhost:3000/users/#{current_user.id}", method: :get, class: "formFooter__item button " %>
-  </div>
-  <div>
-   <%= link_to 'logout', destroy_user_session_path, method: :delete, class: "formFooter__item button" %>
- </div>
-  <% else %>
-    <div>
-   <%= link_to 'sign up', new_user_registration_path, method: :get, class: "formFooter__item button " %>
- </div>
-   <div>
-   <%= link_to 'sign in', new_user_session_path, method: :get, class: "formFooter__item button " %>
- </div>
-  <% end %>
-
-    </div>
-    <div class="formFooter__item button">
-    </div>
-
-
-<aside class="sub">
-<section class="lfe-menu">
-  <ul class="side-menu">
-    <li>Mypage
-    </li>
-    <li>Purchase history
-    </li>
-    <li><a href="/items">Your items</a>
-    </li>
-    <li>Your review
-    </li>
+<div class="mypage_container">
+  <div class="mypage_content">
+    <section class="mypage_user_icon">
+      <a href="/users/<%= current_user.id %>">
+        <%= image_tag current_user.avatar, class:"user_icon", class:"user_icon" %>
+        <h4 class="mypage_nickname"><%= current_user.nickname %></h4>
+      </a>
+    </section>
+<div class="mypage_profile">
+  <ul>
+    <li id="left" class="selected">Profile</li>
+    <li id="right">User information</li>
   </ul>
-</section>
-</aside>
 
-<div class="grid">
-<h1>Profile information</h1>
+  <div class="form-group">
+      <%= form_tag("/users/#{current_user.id}", method: :patch) do %>
+  <div class="contents">
+    <div class="left">
+  <div class="field">
+    <p>Profile</p><br>
+    <textarea rows="4" cols="30" class="input-text text">
+      <% if current_user.profile.nil? %>
+      My name is <%= current_user.nickname %>.<br>
+      I live in Japan and hope you like my items!
+      <% else %>
+      <%= current_user.profile %>
 
-<%= form_tag("/users/#{current_user.id}", method: :patch) do %>
-
-<div class="field">
-  <input type="file" name="image">
-
+       <% end %>
+      </textarea>
+  </div>
 </div>
+      <div class="right">
 
-<div class="field">
-  <textarea name="profile"><%= current_user.profile %></textarea>
-</div>
 
-<div class="form-group">
-  <input type="submit" value="Save">
+      </div>
+
+  <input type="submit" value="Save" class="save_button">
+
+
 </div>
 <% end %>
+
 </div>
+
+
+</div>
+
+<div class="side_menu">
+
+  <nav class="mypage_nav">
+    <ul class="mypage_nav_list">
+      <li>
+        <a href="<%= user_path %>"" class=" nav_list">Mypage <i class="arrow icon-arrow-right"></i></a>
+      </li>
+      <li>
+        <a href="<%= items_path %>"" class=" nav_list">Listing items <i class="arrow icon-arrow-right"></i></a>
+      </li>
+      <li>
+        <a href="<%= new_item_path %>"" class=" nav_list">Sell your item <i class="arrow icon-arrow-right"></i></a>
+
+      </li>
+      <li>
+        <a href="<%= destroy_user_session_path %>"" class=" nav_list">Log out <i class="arrow icon-arrow-right"></i></a>
+
+      </li>
+    </ul>
+  </nav>
+
+</div>
+
+
+</div>
+</div>
+
+
+
