@@ -11,7 +11,9 @@
             Shopper
           </th>
           <td>
-            <%= @item.user_id %>
+            <a href="/users/<%= @item.user_id %>">
+            <%= @item.user.nickname %>
+          </a>
           </td>
         </tr>
         <tr>
@@ -24,16 +26,13 @@
         </tr>
         <tr>
           <th>
+            stock
           </th>
           <td>
+            <%= @item.stock %>
           </td>
         </tr>
-        <tr>
-          <th>
-          </th>
-          <td>
-          </td>
-        </tr>
+
       </tbody>
     </table>
 
@@ -44,39 +43,52 @@
     </div>
     <div class="item_edit_button">
     <% if @item.user_id == current_user.id %>
-<%= link_to "Edit", edit_item_path, method: :get, class:"edit_button" %>
+<%= link_to "Edit", edit_item_path, method: :get, class:"edit_button" %><br><br><br>
+<%= link_to "Delete Item", "/items/#{ @item.id }", method: :delete, class:"delete_button" %>
 <% else %>
 <% end %>
 </div>
 
 </div>
 
-<div class="form">
+<div class="item_comment">
+</div>
+
+<div class="form-group">
+  <h2>Comments</h2>
 <%= form_tag('/comments', method: :post) do %>
   <div class="field">
-    <textarea name="content"></textarea>
+    <textarea name="content" class="input-text" cols="30" rows="5"></textarea>
   </div>
   <%= hidden_field_tag(:item_id, @item.id) %>
   <div class="field">
-    <input type="submit" value="Leave comment">
+    <input type="submit" value="Leave comment" class="sell_button">
   </div>
 <% end %>
 
-<div class="comment">
-  <% @comments.each do |comment| %>
-  <% if comment.item_id== @item.id %>
-  <ul>
-    <li>
-      <%= comment.user.nickname %>
-    </li>
-    <li>
-      <%= comment.content %>
-    </li>
 
-  </ul>
-  <% end %>
+<table class="item_comments">
+  <h2> All comments</h2>
+  <tbody>
+      <% @comments.each do |comment| %>
+    <% if comment.item_id== @item.id %>
+
+    <tr>
+      <th>
+        <div class="item_comments_image">
+        </div>
+        <%= link_to "#{ comment.user.nickname }", "/users/#{comment.user.id}", method: :get, class:"comments_profile" %>
+
+      </th>
+      <td>
+        <%= comment.content %>
+      </td>
+    </tr>
 <% end %>
-</div>
+    <% end %>
+  </tbody>
+</table>
+
 </div>
 
 
