@@ -1,29 +1,42 @@
-<div class="contents">
+<div class="login_panel">
+<div class="login_no_account">
+
+<h2 class="upload">Please put item information</h2>
+
+</div>
+
+<div class="form-group">
 
 <%= form_for @item do |f| %>
 
   <div class="field">
-    <%= f.label :"item's name" %>
-    <%= f.text_field :title, placeholder: "#{@item.title}" %>
-  </div>
-  <div class="field">
-    <%= f.label :description  %>
-    <%= f.text_field :description, placeholder: "#{@item.description}" %>
-  </div>
+  <%= f.label :"Item's image" %><br><br>
+  <%= f.file_field :image %>
+</div>
 
-    <div class="field">
-    <%= f.label :price  %>
-    <%= f.number_field :price, placeholder: "#{@item.price}" %>
-  </div>
-    <div class="field">
-    <%= f.label :stock  %>
-    <%= f.number_field :stock, placeholder: "#{@item.stock}" %>
-  </div>
+<div class="field">
+  <%= f.label :"Item's name" %><br><br>
+  <%= f.text_field :title, placeholder:"Item's name", class:"input-text" %>
+</div>
 
-  <div class="field">
-    <%= hidden_field_tag(:user_id, current_user.id) %>
-    <%= f.submit "Save" %>
-  </div>
+<div class="field">
+  <%= f.label :"Item's description" %><br><br>
+  <%= f.text_area :description, size: "30x5", class:"input-text" %>
+</div>
+
+<div class="field">
+  <%= f.label :price %><br><br>
+  <%= f.number_field :price, placeholder: "ex.¥100", class:"input-text" %>
+</div>
+
+<div class="field">
+  <%= f.label :stock %><br><br>
+  <%= f.number_field :stock, placeholder: "ex.3", class:"input-text" %>
+</div>
+<div class="field">
+  <%= f.submit "Sell your item", class:"sell_button" %>
+</div>
 
 <% end %>
+</div>
 </div>
