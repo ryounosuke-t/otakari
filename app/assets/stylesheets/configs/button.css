@@ -8,3 +8,32 @@
   border-radius: 4px;
   text-decoration: none;
 }
+
+.user_page_button{
+  cursor: pointer;
+  padding: 8px 105px;
+  color: #FFFFFF;
+  background-color: #0099e8;
+  font-size: 16px;
+  border: 1px solid #0099e8;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 40px;
+  margin:0  auto;
+
+}
+
+
+.login_button{
+  cursor: pointer;
+  padding: 4px 105px;
+  color: #FFFFFF;
+  background-color: #ea352d;
+  font-size: 16px;
+  border: 1px solid #ea352d;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 40px;
+  margin:0 auto;
+
+}
