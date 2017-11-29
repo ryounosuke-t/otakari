@@ -2,7 +2,7 @@
   <div class="mypage_content">
     <section class="mypage_user_icon">
       <a href="/users/<%= current_user.id %>">
-        <%= image_tag current_user.avatar, class:"user_icon", class:"user_icon" %>
+         <%= image_tag current_user.avatar, class:"user_icon", class:"user_icon" %>
         <h4 class="mypage_nickname"><%= current_user.nickname %></h4>
       </a>
     </section>
@@ -60,7 +60,7 @@
 
       </li>
       <li>
-        <a href="<%= destroy_user_session_path %>"" class=" nav_list">Log out <i class="arrow icon-arrow-right"></i></a>
+        <a href="<%= logout_users_path %>"" class=" nav_list">Log out <i class="arrow icon-arrow-right"></i></a>
 
       </li>
     </ul>

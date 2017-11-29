@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-
   root "timelines#index"
-  resources :users, only: [:show, :update]
+
+  devise_for :users
+  resources :users do
+    collection do
+      get 'logout'
+    end
+  end
   resources :comments, only: :create
   resources :timelines
   resources :items
