@@ -21,11 +21,11 @@
 <!-- /.js-tab -->
 
 
-<div class="js-tab_content sky selected">
+<div class="js-tab_content left selected">
 <div class="form-group" >
-  <div class="field">
     <p>Profile</p><br>
     <%= form_tag("/users/#{current_user.id}", method: :patch) do %>
+  <div class="field">
 
     <textarea rows="4" cols="30" name="profile" class="input-text text" >
       <% if current_user.profile.nil? %>
@@ -36,17 +36,17 @@
       <% else %>
       <%= current_user.profile %>
        <% end %>
-      </textarea><br><br>
+      </textarea>
+</div>
+      <br><br>
        <input type="submit" value="Save" class="save_button">
 
       <% end %>
   </div>
 
-
-
 </div><!-- /.js-tab_content -->
 
-<div class="js-tab_content sunset">
+<div class="js-tab_content right ">
         <p>User information</p>
   <div class="form-group">
 
@@ -56,6 +56,7 @@
     <%= f.file_field :avatar %>
 </div>
 
+  <div class="field">
     <%= f.label :"nickname" %><br><br>
     <%= f.text_field :nickname, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
   </div>
@@ -76,11 +77,12 @@
   </div>
 
     <%= f.submit "submit" %>
-      </div>
       <% end %>
 </div>
 
 </div><!-- /.js-tab_content -->
+</div>
+
 
 </div>
 <!-- タブの切り替えここまで -->
@@ -107,9 +109,9 @@
     </ul>
   </nav>
 </div>
+
+
 </div>
-
-
 </div>
 
 
