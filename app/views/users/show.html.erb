@@ -50,8 +50,11 @@
         <p>User information</p>
   <div class="form-group">
 
-
       <%= form_for @user do |f| %>
+       <div class="field">
+    <%= f.label :"User image" %><br><br>
+    <%= f.file_field :avatar %>
+</div>
 
     <%= f.label :"nickname" %><br><br>
     <%= f.text_field :nickname, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
@@ -71,6 +74,8 @@
     <%= f.label :"password" %><br><br>
     <%= f.password_field :password, placeholder: "Please put current password", autocomplete: "off", class:"input-text" %>
   </div>
+
+    <%= f.submit "submit" %>
       </div>
       <% end %>
 </div>

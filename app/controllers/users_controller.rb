@@ -8,11 +8,21 @@ class UsersController < ApplicationController
     redirect_to user_path, id: current_user.id
   end
 
+  def profile_update
+    user=User.find(current_user.id)
+    user.update(profile_params)
+    redirect_to user_path, id: current_user.id
+  end
+
   def logout
   end
 
   private
   def user_params
+    params.require(:user).permit(:avatar, :email, :nickname, :address)
+  end
+
+  def profile_params
     params.permit(:profile)
   end
 
