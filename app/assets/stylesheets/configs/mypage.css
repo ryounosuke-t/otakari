@@ -57,28 +57,20 @@ a{
     }
 
 
-.contents {
-  background-color: #fff;
-  height: 360px;
-  padding: 20px;
-}
-
-.contents .right { /* .contentsの中の.rightに対する記述 */
-    display: none; /* 最初、右のコンテンツは非表示にする */
-  }
-
-
-
 .nav_list{
   display:block;
   width:100%;
-  padding:16px 0 16px 16px;
+  padding:16px 0 ;
   text-decoration: none;
-  margin:10px 5px 10px 0;
+  margin:10px 0 10px ;
   font-size:16px;
   border-bottom: 1px solid #ccc;
-
 }
+
+.mypage_nav_list li{
+  padding:0 0 0 16px;
+}
+
 
 .mypage_content{
   height:100%;

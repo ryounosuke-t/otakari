@@ -1,5 +1,6 @@
 /* navbar */
 
+
 .siteHeader {
   /**
    * Lay out the children of this container with
@@ -13,9 +14,9 @@
    * end laying flush against the container's edges.
    */
   justify-content: space-between;
-
-  padding: 20px 5px 0 0 ;
+  margin: 0 ;
   background-color: white;
+  height:60px;
 }
 
   .siteHeader__section {
@@ -31,6 +32,7 @@
      * align along their top edges.
      */
     align-items: center;
+    margin:0 0 0 5%;
   }
 
     .siteHeader__item {

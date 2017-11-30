@@ -1,0 +1,16 @@
+  <% @items.each do |item| %>
+
+<div class="box">
+    <a href="/items/<%= item.id %>" >
+    <div class="box_image">
+      <%= image_tag "sample.png", class:"item_box_image" %>
+    </div>
+  </a>
+    <div class="box_body">
+    <h3 class="box_items_name">  <%= item.title %></h3>
+       <div class="box_price">
+        ¥ <%= item.price %>
+       </div>
+     </div>
+   </div>
+<% end %>

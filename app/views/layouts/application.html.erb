@@ -25,6 +25,7 @@
     <div class="siteHeader__item siteHeaderButton">
       <% if user_signed_in? %>
       <%= link_to "Mypage", "/users/#{current_user.id}", method: :get, class: "button" %>
+
       <% else %>
       <%= link_to "Sign Up", new_user_registration_path, method: :get, class:"button" %>
       <%= link_to "Log in", new_user_session_path, method: :get, class: "button" %>
@@ -42,6 +43,13 @@
 
   </header>
 <%= yield %>
+<div class="fixed">
+  <div class="upload_items">
+    <a href="<%= new_item_path %>" class="upload_button"><%= image_tag "camera_icon.png", class:"upload_items_image" %></a>
+</div>
+
+  </div>
+
   <footer>
     <div class="footer">
       Copyright @Ryounosuke.Takeuchi

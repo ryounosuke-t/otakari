@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
     @items=Item.all
   end
 
+  def all
+    @items=Item.all
+  end
+
   def new
     @items=Item.new
   end
@@ -15,7 +19,6 @@ class ItemsController < ApplicationController
 
   def create
     Item.create(item_params)
-    redirect_to controller: :timelines, action: :index
   end
 
   def edit
@@ -31,11 +34,13 @@ class ItemsController < ApplicationController
   def destroy
     item=Item.find(params[:id])
     item.destroy
-    redirect_to user_path, id: current_user.id
+  end
+
+  def purchase
   end
 
   private
   def item_params
-    params.require(:item).permit(:id, :title, :description, :price, :stock, :image).merge(user_id: current_user.id)
+    params.require(:item).permit( :title, :description, :price, :stock, :image).merge(user_id: current_user.id)
   end
 end

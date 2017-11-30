@@ -15,6 +15,9 @@ Twitter: @rich_clark
 @import url('configs/upload_page.css');
 @import url('configs/listing_items_page.css');
 @import url('configs/logout_page.css');
+@import url('configs/tab_change.css');
+@import "base.css";
+
 
 
 html, body{
@@ -28,6 +31,19 @@ ul{
   list-style:none;
 
 }
+
+
+.fixed{
+position:fixed;
+right:-10px;
+bottom:-10px;
+}
+
+.upload_items_image{
+  width:40px;
+  height:40px;
+}
+
 
 .grid{
   background-color:red;
@@ -70,6 +86,6 @@ aside{
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require_tree ../../../vendor/assets/stylesheets/.
  *= require_self
  */

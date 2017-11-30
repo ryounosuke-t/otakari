@@ -6,44 +6,80 @@
         <h4 class="mypage_nickname"><%= current_user.nickname %></h4>
       </a>
     </section>
+
+
+<!-- タブの切り替えここから-->
+
 <div class="mypage_profile">
-  <ul>
-    <li id="left" class="selected">Profile</li>
-    <li id="right">User information</li>
+
+  <ul class="js-tab">
+      <li id="left" class="sky selected">Profile</li>
+    <li id="right" class="sunset">User information</li>
+
   </ul>
 
-  <div class="form-group">
-      <%= form_tag("/users/#{current_user.id}", method: :patch) do %>
-  <div class="contents">
-    <div class="left">
+<!-- /.js-tab -->
+
+
+<div class="js-tab_content sky selected">
+<div class="form-group" >
   <div class="field">
     <p>Profile</p><br>
-    <textarea rows="4" cols="30" class="input-text text">
+    <%= form_tag("/users/#{current_user.id}", method: :patch) do %>
+
+    <textarea rows="4" cols="30" name="profile" class="input-text text" >
       <% if current_user.profile.nil? %>
-      My name is <%= current_user.nickname %>.<br>
+
+      My name is <%= current_user.nickname %>.
       I live in Japan and hope you like my items!
+
       <% else %>
       <%= current_user.profile %>
-
        <% end %>
-      </textarea>
+      </textarea><br><br>
+       <input type="submit" value="Save" class="save_button">
+
+      <% end %>
   </div>
-</div>
-      <div class="right">
 
 
+
+</div><!-- /.js-tab_content -->
+
+<div class="js-tab_content sunset">
+        <p>User information</p>
+  <div class="form-group">
+
+
+      <%= form_for @user do |f| %>
+
+    <%= f.label :"nickname" %><br><br>
+    <%= f.text_field :nickname, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"email" %><br><br>
+    <%= f.email_field :email, placeholder:"#{current_user.email }", autofocus: true, class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"address" %><br><br>
+    <%= f.text_area :address, placeholder: "6 Chome-11-1 Roppongi ", autofocus: true, size: "",class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"password" %><br><br>
+    <%= f.password_field :password, placeholder: "Please put current password", autocomplete: "off", class:"input-text" %>
+  </div>
       </div>
-
-  <input type="submit" value="Save" class="save_button">
-
-
-</div>
-<% end %>
-
+      <% end %>
 </div>
 
+</div><!-- /.js-tab_content -->
 
 </div>
+<!-- タブの切り替えここまで -->
+
 
 <div class="side_menu">
 
@@ -65,11 +101,10 @@
       </li>
     </ul>
   </nav>
-
+</div>
 </div>
 
 
-</div>
 </div>
 
 

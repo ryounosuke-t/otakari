@@ -1,0 +1,58 @@
+<div class="mypage_profile">
+  <ul>
+    <li id="left" class="selected">Profile</li>
+    <li id="right">User information</li>
+  </ul>
+
+
+  <div class="contents">
+    <div class="left contents_show" >
+      <div class="form-group" >
+  <div class="field">
+    <p>Profile</p><br>
+    <%= form_tag("/users/#{current_user.id}", method: :patch) do %>
+
+    <textarea rows="4" cols="30" name="profile" class="input-text text" >
+      <% if current_user.profile.nil? %>
+      My name is <%= current_user.nickname %>.<br>
+      I live in Japan and hope you like my items!
+
+      <% else %>
+      <%= current_user.profile %>
+       <% end %>
+      </textarea><br><br>
+       <input type="submit" value="Save" class="save_button">
+
+      <% end %>
+  </div>
+</div>
+</div>
+    <div class="right contents_show" >
+      <div class="form-group">
+          <p>User information</p>
+      <%= form_for @user do |f| %>
+
+    <%= f.label :"nickname" %><br><br>
+    <%= f.text_field :nickname, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"email" %><br><br>
+    <%= f.email_field :email, placeholder:"#{current_user.email }", autofocus: true, class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"address" %><br><br>
+    <%= f.text_area :address, placeholder: "6 Chome-11-1 Roppongi ", autofocus: true, size: "",class:"input-text" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :"password" %><br><br>
+    <%= f.password_field :password, placeholder: "Please put current password", autocomplete: "off", class:"input-text" %>
+  </div>
+      </div>
+      <% end %>
+
+      </div>
+</div>
+</div>

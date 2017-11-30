@@ -49,4 +49,5 @@ gem 'devise'
 gem 'pry-rails'
 gem 'paperclip'
 gem 'carrierwave'
+gem 'mini_magick'
 

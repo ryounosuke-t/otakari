@@ -1,31 +1,23 @@
-  <div class="container">
+    <div class="header_image">
+      <h1>Do you want special Japanese anime goods? </h1>
 
-  </div>
+    </div>
+    <div class="main_page_service">
+      What is Otacart?
+
+      1.Buy
+
+      2.Sell
+
+      3.Community
+
+    </div>
 
   <h1 class="index">Pick up items</h1>
 
 <div class="cover">
-  <% @items.each do |item| %>
-   <div class="box">
-    <a href="/items/<%= item.id %>" >
-    <div class="box_image">
-      <%= image_tag "image/sample.png" %>
-    </div>
-  </a>
-    <div class="box_body">
-    <h3 class="box_items_name">  <%= item.title %></h3>
-       <div class="box_price">
-        <%= item.price %>
-       </div>
-     </div>
-   </div>
-
-   <% end %>
+  <%= render partial: "index" %>
 </div>
 
-
-<div class="upload_items">
-<%= link_to "Upload items", new_item_path, method: :get %>
-</div>
 </div>
 

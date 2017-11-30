@@ -1,7 +1,7 @@
 <div class="item_box_container">
     <h2 class="item_name"> <%= @item.title %> </h2>
     <div class="item_image">
-        <%= image_tag @item.image %>
+        <%= image_tag @item.image_url(:thumb) %>
     </div>
 
     <table class="item_detail">
@@ -42,10 +42,14 @@
       </span>
     </div>
     <div class="item_edit_button">
+     <% if current_user.present? %>
     <% if @item.user_id == current_user.id %>
 <%= link_to "Edit", edit_item_path, method: :get, class:"edit_button" %><br><br><br>
 <%= link_to "Delete Item", "/items/#{ @item.id }", method: :delete, class:"delete_button" %>
+<% end %>
+
 <% else %>
+  <%= link_to "Puchase", root_path, method: :get, class:"save_button" %>
 <% end %>
 </div>
 

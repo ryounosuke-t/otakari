@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:profile, :id)
+    params.permit(:profile)
   end
 
 

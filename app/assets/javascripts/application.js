@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= rewuire_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 
 
