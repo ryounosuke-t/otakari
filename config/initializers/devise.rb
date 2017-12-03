@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
@@ -274,6 +275,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :facebook, '156242591773668', '5feb3fc3ed5e18df53cebb8b174c9080', scope: 'email', info_fields: 'email, name' # ⚠︎API_KEYとAPI_SECRETは(1)手順で作成したものを記述してください(直書きが危険ですので環境変数とかにして置くのが安全です)
+  config.omniauth :facebook, ENV['FACEBOOK_API'], ENV['FACEBOOK_KEY']
+  # ⚠︎API_KEYとAPI_SECRETは(1)手順で作成したものを記述してください(直書きが危険ですので環境変数とかにして置くのが安全です)
 
 end

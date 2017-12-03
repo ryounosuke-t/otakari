@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :omniauthable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable,
+        :validatable, :omniauthable
 
 
   mount_uploader :avatar, ImageUploader
@@ -25,7 +26,7 @@ class User < ActiveRecord::Base
 
         # If you are using confirmable and the provider(s) you use validate emails,
         # uncomment the line below to skip the confirmation emails.
-        user.skip_confirmation!
+        #user.skip_confirmation!
       end
     end
   end

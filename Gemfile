@@ -50,7 +50,7 @@ gem 'pry-rails'
 gem 'paperclip'
 gem 'carrierwave'
 gem 'mini_magick'
-gem "omniauth", '~>1.6'
+gem "omniauth"
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
