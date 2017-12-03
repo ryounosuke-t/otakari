@@ -1,18 +1,27 @@
 Rails.application.routes.draw do
   root "timelines#index"
 
-  devise_for :users
+  devise_for :users,
+  path: '',
+  path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
+  controllers: {omniauth_callbacks: 'omniauth_callbacks'}
+
   resources :users do
     collection do
       get 'logout'
+      get 'profile_update'
     end
+
   end
+
   resources :comments, only: :create
   resources :timelines
+
   resources :items do
     collection do
       get 'all'
     end
+
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

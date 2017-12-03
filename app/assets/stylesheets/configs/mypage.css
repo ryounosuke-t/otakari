@@ -24,12 +24,23 @@ a{
 
 .user_icon{
   margin:40px 0 40px 0;
+  width:40px;
+  height:40px;
+  display: inline-block;
+  text-decoration: none;
+  width: 70px;
+  height: 70px;
+  line-height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: .4s;
 
 }
 
 .mypage_profile {
   width: 100%;
   height:100%;
+  background-color: white;
 }
 .mypage_profile ul { /* .tab-menuの中のulに対する記述 */
     padding: 0;
@@ -56,6 +67,10 @@ a{
       border-top:2px solid #ea352d;
     }
 
+.side_menu{
+  background-color: white;
+  margin: 10% 0 0 0;
+}
 
 .nav_list{
   display:block;

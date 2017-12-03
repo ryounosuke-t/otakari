@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def profile_update
     user=User.find(current_user.id)
     user.update(profile_params)
-    redirect_to user_path, id: current_user.id
+    userid=current_user.id
+    redirect_to "/users/#{current_user.id}"
   end
 
   def logout

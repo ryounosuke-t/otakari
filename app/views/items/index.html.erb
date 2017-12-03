@@ -8,7 +8,7 @@
     <% current_user.items.each do |item| %>
       <li>
         <a href="/items/<%= item.id %>">
-          <%= image_tag "user_background.jpg", class:"mypage_item_image" %>
+          <%= image_tag item.image, class:"mypage_item_image" %>
           <div class="mypage_item_body">
             <%= item.title %><br>
             <div class="mypage_item_price">
