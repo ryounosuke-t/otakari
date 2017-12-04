@@ -11,7 +11,8 @@
             Shopper
           </th>
           <td>
-            <a href="/users/<%= @item.user_id %>">
+            <a href="/users/<%= @item.user_id %>/page">
+            <%= image_tag @item.user.image, class:"item_comments_image" %><br>
             <%= @item.user.name %>
           </a>
           </td>

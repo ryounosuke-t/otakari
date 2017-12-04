@@ -1,0 +1,101 @@
+<div class="mypage_container">
+  <div class="mypage_content">
+    <section class="mypage_user_icon">
+      <a href="/users/<%= @user.id %>">
+        <% if @user.avatar.present? %>
+         <%= image_tag @user.avatar, class:"user_icon" %>
+        <% else %>
+          <%= image_tag @user.image, class:"user_icon" %>
+        <% end %>
+        <h4 class="mypage_nickname"><%= @user.name %></h4>
+      </a>
+    </section>
+
+
+<!-- タブの切り替えここから-->
+
+<div class="mypage_profile">
+
+  <ul class="js-tab">
+      <li id="left" class="sky selected">Profile</li>
+    <li id="right" class="sunset">User information</li>
+
+  </ul>
+
+<!-- /.js-tab -->
+
+<div class="js-tab_content left selected">
+<div class="form-group" >
+    <p>Profile</p><br>
+  <div class="field">
+    <div class="profile">
+      <%= @user.profile %>
+    </div>
+    <% if @user.profile.nil? %>
+      <div class="profile">
+        Unfullfilled
+      </div>
+    <% end %>
+</div>
+      <br><br>
+
+  </div>
+
+</div><!-- /.js-tab_content -->
+
+<div class="js-tab_content right ">
+  <div class="form-group">
+    <p>User information</p><br>
+
+       <div class="field">
+        <%= @user.name %>
+        <%= @user.email %>
+        <%= @user.address %>
+      </div>
+  </div>
+
+</div>
+
+
+
+<!-- /.js-tab_content -->
+</div>
+
+
+</div>
+<!-- タブの切り替えここまで -->
+
+<% if signed_in? %>
+<div class="side_menu">
+
+  <nav class="mypage_nav">
+    <ul class="mypage_nav_list">
+      <li>
+        <a href="<%= user_path %>"" class=" nav_list">Mypage <i class="arrow icon-arrow-right"></i></a>
+      </li>
+      <li>
+        <a href="<%= items_path %>"" class=" nav_list">Listing items <i class="arrow icon-arrow-right"></i></a>
+      </li>
+      <li>
+        <a href="<%= new_item_path %>"" class=" nav_list">Sell your item <i class="arrow icon-arrow-right"></i></a>
+
+      </li>
+      <li>
+        <a href="<%= logout_users_path %>"" class=" nav_list">Log out <i class="arrow icon-arrow-right"></i></a>
+
+      </li>
+    </ul>
+  </nav>
+</div>
+<% else %>
+<div class="login_no_account">
+
+  <%= link_to "Join Us", new_user_session_path, class:"button" %>
+</div>
+<% end %>
+
+</div>
+</div>
+
+
+
