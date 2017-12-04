@@ -92,6 +92,14 @@
         <% if @item.user_id==comment.user.id %>
         (Shopper)
         <% end %>
+        <% if current_user.present? %>
+        <% if current_user.id==comment.user.id %>
+
+        <%= link_to image_tag('comment_cancel.png'), "/comments/#{comment.id}", method: :delete, class:"comment_destroy" %>
+
+        <% end %>
+        <% end %>
+
       </div>
       <div class="item_comments_content">
         <span><%= comment.content %></span>

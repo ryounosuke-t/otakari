@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   get '/users/:id/page' => 'users#page', as: 'page'
 
-
   resources :users do
     collection do
       get 'logout'
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :comments, only: :create
+  resources :comments, only: [:show, :create, :destroy]
   resources :timelines
 
   resources :items do
