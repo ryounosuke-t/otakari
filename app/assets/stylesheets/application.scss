@@ -23,7 +23,6 @@ Twitter: @rich_clark
 html, body{
   font-family: 'Roboto', sans-serif;
 
-
 }
 
 
@@ -44,34 +43,12 @@ bottom:-10px;
   height:40px;
 }
 
-
-.grid{
-  background-color:red;
-  height:100%;
-  width:200px;
-  margin:auto;
-}
-
-aside{
-  float:left;
-  width:200px;
-  height:500px;
-  margin:5% 5% 7% 7%;
-}
-
-.side-menu{
-  width:80%;
-  margin: 20px auto 0;
-  padding:10px 20px 15px 20px;
-  border:solid 1px black;
+.footer{
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
 
 }
-
-.side-menu li{
-    font-size:15px;
-    padding:10px 0 10px 0;
-    border-bottom:solid 1px black;
-  }
 
 
 /*

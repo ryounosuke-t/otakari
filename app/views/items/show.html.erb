@@ -12,7 +12,7 @@
           </th>
           <td>
             <a href="/users/<%= @item.user_id %>">
-            <%= @item.user.nickname %>
+            <%= @item.user.name %>
           </a>
           </td>
         </tr>
@@ -49,7 +49,7 @@
 <% end %>
 
 <% else %>
-  <%= link_to "Puchase", root_path, method: :get, class:"save_button" %>
+  <%= link_to "Purchase", purchase_items_path, method: :get, class:"save_button" %>
 <% end %>
 </div>
 
@@ -66,33 +66,40 @@
   </div>
   <%= hidden_field_tag(:item_id, @item.id) %>
   <div class="field">
-    <input type="submit" value="Leave comment" class="sell_button">
+
+    <% if signed_in? %>
+    <input type="submit" value="Leave Comment" class="sell_button">
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="sell_button">Leave Comment</a>
+    <% end %>
   </div>
 <% end %>
-
-
-<table class="item_comments">
-  <h2> All comments</h2>
-  <tbody>
+<div class="item_comment">
+</div>
+    <h2> All comments</h2>
+    <table class="item_comments">
+      <tbody>
       <% @comments.each do |comment| %>
     <% if comment.item_id== @item.id %>
-
     <tr>
       <th>
-        <div class="item_comments_image">
-        </div>
-        <%= link_to "#{ comment.user.nickname }", "/users/#{comment.user.id}", method: :get, class:"comments_profile" %>
-
-      </th>
-      <td>
-        <%= comment.content %>
+    <%= image_tag comment.user.image, class:"item_comments_image" %>
+  </th>
+  <td>
+        <div class="item_comments_name">
+        <%= link_to "#{ comment.user.name }", "/users/#{comment.user.id}", method: :get, class:"comments_profile" %>
+        <% if @item.user_id==comment.user.id %>
+        (Shopper)
+        <% end %>
+      </div>
+      <div class="item_comments_content">
+        <span><%= comment.content %></span>
+      </div>
       </td>
     </tr>
 <% end %>
     <% end %>
-  </tbody>
+</tbody>
 </table>
-
 </div>
-
 

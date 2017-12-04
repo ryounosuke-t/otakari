@@ -5,6 +5,13 @@
 </div>
 <div class="form-group">
   <h2> Log in</h2>
+  <a href="<%= user_facebook_omniauth_authorize_path %>" class="facebook_button">
+    <%= image_tag "facebook_logo.png" %>
+    Log in With Facebook
+  </a>
+  <br>
+  <br>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.email_field :email, placeholder: 'email', autofocus: true, class:"input-text" %>
@@ -26,10 +33,6 @@
   </div>
 <% end %>
 
-<%= link_to "Facebookで会員登録", user_facebook_omniauth_authorize_path %>
-
-
 </div>
 
-<%= render "devise/shared/links" %>
 </div>

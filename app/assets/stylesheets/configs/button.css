@@ -117,6 +117,27 @@
   overflow: hidden;
 }
 
+.facebook_button{
+    background-color:#3b5998;
+    cursor: pointer;
+  padding: 15px 30px;
+  color: #FFFFFF;
+  font-size: 16px;
+  border: 1px solid #3b5998;
+  border-radius: 4px;
+  text-decoration: none;
+  line-height: 40px;
+  margin:0 auto;
+  text-align: center;
+
+}
+
+.facebook_button img{
+  display:inline;
+  vertical-align: middle;
+  padding:0 10px 6px 0;
+}
+
 .arrow{
 position: relative;
 display: inline-block;

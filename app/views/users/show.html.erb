@@ -1,9 +1,13 @@
 <div class="mypage_container">
   <div class="mypage_content">
     <section class="mypage_user_icon">
-      <a href="/users/#{current_user.id}">
-         <%= image_tag current_user.avatar, class:"user_icon" %>
-        <h4 class="mypage_nickname"><%= current_user.nickname %></h4>
+      <a href="/users/<%= @user.id %>">
+        <% if @user.avatar.present? %>
+         <%= image_tag @user.avatar, class:"user_icon" %>
+        <% else %>
+          <%= image_tag @user.image, class:"user_icon" %>
+        <% end %>
+        <h4 class="mypage_nickname"><%= @user.name %></h4>
       </a>
     </section>
 
@@ -20,17 +24,19 @@
 
 <!-- /.js-tab -->
 
-
 <div class="js-tab_content left selected">
 <div class="form-group" >
     <p>Profile</p><br>
+
+    <% if current_user.present? %>
+    <% if current_user.id== @user.id %>
     <%= form_tag(profile_update_users_path, method: :get) do %>
 
   <div class="field">
 
     <textarea rows="4" cols="30" name="profile" class="input-text text">
       <% if current_user.profile.nil? %>
-      My name is <%= current_user.nickname %>.
+      My name is <%= current_user.name %>.
       I live in Japan and hope you like my items!
       <% else %>
       <%= current_user.profile %>
@@ -58,7 +64,7 @@
 
   <div class="field">
     <%= f.label :"nickname" %><br><br>
-    <%= f.text_field :nickname, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
+    <%= f.text_field :name, placeholder: "#{ current_user.nickname }",autofocus: true, class:"input-text" %>
   </div>
 
   <div class="field">
@@ -71,16 +77,16 @@
     <%= f.text_area :address, placeholder: "6 Chome-11-1 Roppongi ", autofocus: true, size: "",class:"input-text" %>
   </div>
 
-  <div class="field">
-    <%= f.label :"password" %><br><br>
-    <%= f.password_field :password, placeholder: "Please put current password", autocomplete: "off", class:"input-text" %>
-  </div>
-
     <%= f.submit "Save", class:"save_button" %>
       <% end %>
 </div>
 
-</div><!-- /.js-tab_content -->
+</div>
+<% end %>
+<% end %>
+
+
+<!-- /.js-tab_content -->
 </div>
 
 

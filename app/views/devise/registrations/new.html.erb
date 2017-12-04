@@ -10,7 +10,7 @@
 
   <div class="field">
     <%= f.label :"nickname" %><br><br>
-    <%= f.text_field :nickname, placeholder: "otakarisan",autofocus: true, class:"input-text" %>
+    <%= f.text_field :name, placeholder: "otakarisan",autofocus: true, class:"input-text" %>
   </div>
 
   <div class="field">
@@ -37,9 +37,6 @@
     <%= f.submit "Register", class:"login_button" %>
   </div>
 <% end %>
-
-<%= link_to "Facebookで会員登録", user_facebook_omniauth_authorize_path %>
-
 
 </div>
 

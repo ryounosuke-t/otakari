@@ -11,7 +11,18 @@
 </head>
 <body>
 
-<header>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=156242591773668';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<header >
   <div class="siteHeader">
   <!-- This section gets pushed to the left side-->
   <div class="siteHeader__section">
@@ -45,17 +56,20 @@
 <%= yield %>
 <div class="fixed">
   <div class="upload_items">
+    <% if user_signed_in? %>
     <a href="<%= new_item_path %>" class="upload_button"><%= image_tag "camera_icon.png", class:"upload_items_image" %></a>
+    <% else %>
+    <a href="<%= new_user_session_path %>" class="upload_button"><%= image_tag "camera_icon.png", class:"upload_items_image" %></a>
+    <% end %>
 </div>
 
   </div>
 
-  <footer>
+  <footer id="footer">
     <div class="footer">
       Copyright @Ryounosuke.Takeuchi
     </div>
   </footer>
-
 
 
 </body>
