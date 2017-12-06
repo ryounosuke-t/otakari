@@ -6,22 +6,17 @@
   <title>Otacart</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+  $('.datepicker').datepicker();
+
+</script>
 
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=156242591773668';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <header >
@@ -76,16 +71,6 @@
       Copyright @Ryounosuke.Takeuchi
     </div>
   </footer>
-
-<script type="text/javascript">
-$(function() {
-$('#tagme').tagify();
-$('form').submit(function() {
-$('#tagme').tagify('serialize');
-});
-});
-</script>
-
 
 </body>
 </html>

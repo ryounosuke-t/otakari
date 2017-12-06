@@ -16,7 +16,7 @@
 
 <div class="field">
   <%= f.label :"Item's name" %><br><br>
-  <%= f.text_field :title, placeholder:"Item's name", class:"input-text" %>
+  <%= f.text_field :title, placeholder:"Item's name", class:"input-text " %>
 </div>
 
 <div class="field">
@@ -25,10 +25,8 @@
 </div>
 
 <div class="field">
-  <form method="get">
-<textarea id="tagme" name="tags"></textarea>
+  <%= f.text_field :category, class:"datepicker" %>
 
-</form>
 </div>
 
 <div class="field">
