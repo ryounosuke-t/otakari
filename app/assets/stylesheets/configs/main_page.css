@@ -40,12 +40,12 @@ position:relative;
 
 .main_page_service h1{
   font-size:25px;
-  margin:0 0 15% 0;
+  margin:0 0 10px 0;
 }
 
 .explanation{
   font-size:25px;
-
+  text-align: center;
 }
 
 .explanation_text{
@@ -109,4 +109,10 @@ position:relative;
       font-weight: bold;
 
     }
+
+.request{
+  text-align: center;
+  margin:30px 0;
+
+}
 

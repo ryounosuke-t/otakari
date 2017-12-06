@@ -6,7 +6,9 @@
 
       <h1>What is Otacart?</h1>
       <div class="explanation">
+        <p class="explanation_header">
       1.Buy from Japan
+    </p>
       <%= image_tag "top_buy.png", class: "top_image" %><br>
       <p class="explanation_text">
       Do you need special anime goods? <br>
@@ -15,7 +17,9 @@
 
     </div>
       <div class="explanation">
+      <p class="explanation_header">
       2.Sell from Japan
+    </p>
       <%= image_tag "top_sell.png", class:"top_image" %><br>
       <p class="explanation_text">
       Do you live in Japan? <br>
@@ -23,18 +27,29 @@
     </p>
     </div>
     <div class="explanation">
+    <p class="explanation_header">
       3.Request to Japan
-
-    <%= link_to "Request items", class:"save_button" %>
+    </p>
+      <%= image_tag "top_request.png", class:"top_image" %>
+    <br>
+    <p class="explanation_text">
+      You can't find anime goods? Then please request your items on facebook page!
+    </p>
+    <div class="explanation_button">
+    <%= link_to "Request items", "https://www.facebook.com/otacart", class:"button" %>
+  </div>
+    <br>
+    <%= link_to "Let's Get Started", new_user_session_path, class:"request_button" %>
     </div>
+
+
+
 
     </div>
 
   <h1 class="index">Pick up items</h1>
 
-<div class="cover">
   <%= render partial: "index" %>
-</div>
 
 </div>
 

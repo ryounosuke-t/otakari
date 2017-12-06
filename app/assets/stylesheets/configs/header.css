@@ -128,3 +128,8 @@
   background-color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
+
+.logo img{
+  width:150px;
+  height: 41px;
+}

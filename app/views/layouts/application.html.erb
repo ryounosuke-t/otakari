@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Otakari</title>
+  <title>Otacart</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
@@ -29,7 +29,12 @@
   <!-- This section gets pushed to the left side-->
   <div class="siteHeader__section">
     <div class="siteHeader__item siteHeaderLogo">
-      <div class="fa fa-inbox"><%= link_to "Home", root_path, method: :get, class:"formFooter__item button" %></div>
+      <div class="fa fa-inbox">
+        <!--
+        <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        -->
+
+        <%= link_to image_tag("otacart-logo.png"), root_path, method: :get, class:"formFooter__item logo" %></div>
     </div>
 
   </div>
@@ -40,7 +45,6 @@
       <%= link_to "Mypage", "/users/#{current_user.id}", method: :get, class: "button" %>
 
       <% else %>
-      <%= link_to "Sign Up", new_user_registration_path, method: :get, class:"button" %>
       <%= link_to "Log in", new_user_session_path, method: :get, class: "button" %>
       <% end %>
     </div>
