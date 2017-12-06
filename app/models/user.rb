@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :items
   has_many :comments
 
+
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
     if user

@@ -9,10 +9,12 @@ class ItemsController < ApplicationController
 
   def new
     @items=Item.new
+
   end
 
   def show
     @item=Item.find(params[:id])
+    @item_tag=Item.tagged_with(params[:category])
     @comments=Comment.all
     @comment=Comment.new
   end
@@ -41,6 +43,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit( :title, :description, :price, :stock, :image).merge(user_id: current_user.id)
+    params.require(:item).permit( :title, :description, :price, :stock, :image, :category).merge(user_id: current_user.id)
   end
 end
