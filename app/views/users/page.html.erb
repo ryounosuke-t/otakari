@@ -1,14 +1,13 @@
 <div class="mypage_container">
   <div class="mypage_content">
     <section class="mypage_user_icon">
-      <a href="/users/<%= @user.id %>">
         <% if @user.avatar.present? %>
          <%= image_tag @user.avatar, class:"user_icon" %>
         <% else %>
           <%= image_tag @user.image, class:"user_icon" %>
         <% end %>
         <h4 class="mypage_nickname"><%= @user.name %></h4>
-      </a>
+
     </section>
 
 
@@ -31,6 +30,7 @@
     <div class="profile">
       <%= @user.profile %>
     </div>
+    <br>
     <% if @user.profile.nil? %>
       <div class="profile">
         Unfullfilled
@@ -48,9 +48,20 @@
     <p>User information</p><br>
 
        <div class="field">
+        Name
+        <br>
         <%= @user.name %>
+        <br>
+        <br>
+        Email
+        <br>
         <%= @user.email %>
+        <br>
+        <br>
+        Address
+        <br>
         <%= @user.address %>
+        <br>
       </div>
   </div>
 

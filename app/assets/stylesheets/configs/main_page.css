@@ -23,6 +23,12 @@ position:relative;
 
 }
 
+.top_image{
+  width:200px;
+  margin:5% 0;
+
+}
+
 .main_page_service{
   margin:5%  0;
   background-color: white;
@@ -39,6 +45,14 @@ position:relative;
 
 .explanation{
   font-size:25px;
+
+}
+
+.explanation_text{
+  font-size:20px;
+  padding:0 10%;
+  margin: 0 0 20px 0;
+  line-height: 1.5em;
 
 }
 

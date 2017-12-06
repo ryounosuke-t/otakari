@@ -6,6 +6,8 @@
   <title>Otakari</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+
 
   <%= csrf_meta_tags %>
 </head>
@@ -70,6 +72,15 @@
       Copyright @Ryounosuke.Takeuchi
     </div>
   </footer>
+
+<script type="text/javascript">
+$(function() {
+$('#tagme').tagify();
+$('form').submit(function() {
+$('#tagme').tagify('serialize');
+});
+});
+</script>
 
 
 </body>

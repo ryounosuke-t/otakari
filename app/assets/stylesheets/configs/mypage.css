@@ -64,7 +64,7 @@ a{
 .mypage_profile li.selected {/* .tab-menuの中のliの内、.selectedが与えられているものに対する記述 */
       background-color: white;
       color: black;
-      border-top:2px solid #ea352d;
+      border-top:2px solid #fa4664;
     }
 
 .side_menu{

@@ -28,9 +28,9 @@
   cursor: pointer;
   padding: 4px 105px;
   color: #FFFFFF;
-  background-color: #ea352d;
+  background-color: #fa4664;
   font-size: 16px;
-  border: 1px solid #ea352d;
+  border: 1px solid #fa4664;
   border-radius: 4px;
   text-decoration: none;
   line-height: 40px;
@@ -42,9 +42,9 @@
   cursor: pointer;
   padding: 4px 120px;
   color: #FFFFFF;
-  background-color: #ea352d;
+  background-color: #fa4664;
   font-size: 18px;
-  border: 1px solid #ea352d;
+  border: 1px solid #fa4664;
   border-radius: 4px;
   text-decoration: none;
   line-height: 40px;
@@ -57,9 +57,9 @@
   cursor: pointer;
   padding: 4px 90px;
   color: #FFFFFF;
-  background-color: #ea352d;
+  background-color: #fa4664;
   font-size: 16px;
-  border: 1px solid #ea352d;
+  border: 1px solid #fa4664;
   border-radius: 4px;
   text-decoration: none;
   line-height: 40px;
@@ -72,9 +72,9 @@
   cursor: pointer;
   padding: 10px 100px;
   color: #FFFFFF;
-  background-color: #ea352d;
+  background-color: #fa4664;
   font-size: 16px;
-  border: 1px solid #ea352d;
+  border: 1px solid #fa4664;
   border-radius: 4px;
   text-decoration: none;
   line-height: 40px;
@@ -101,7 +101,7 @@
 .upload_button{
   display: inline-block;
   text-decoration: none;
-  background: #ea352d;
+  background: #fa4664;
   color: #FFFFFF;
   width: 70px;
   height: 70px;
