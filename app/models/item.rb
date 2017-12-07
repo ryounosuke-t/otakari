@@ -1,5 +1,4 @@
 class Item < ActiveRecord::Base
-  acts_as_ordered_taggable_on :labels
 
   mount_uploader :image, ImageUploader
 

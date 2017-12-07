@@ -1,0 +1,34 @@
+.search{
+  text-align: left;
+  margin:0 0 20px 4%;
+  text-decoration: none;
+    width:160px;
+  height:20px;
+
+}
+
+.search form{
+  border-radius:4px;
+  border:1px solid #ccc;
+  line-height: 1.5;
+  font-size:16px;
+  background-color:white;
+
+
+}
+
+.search_input{
+  border:none;
+  height:26px;
+  padding:0 0 0 5px;
+
+}
+
+.icon_search{
+  background-image:url(/assets/search_icon.png);
+  background-size:cover;
+  width:20px;
+  height:20px;
+  border:none;
+  background-color: white;
+}

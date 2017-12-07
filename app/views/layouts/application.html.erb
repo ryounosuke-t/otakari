@@ -36,6 +36,11 @@
       <% else %>
       <%= link_to "Log in", new_user_session_path, method: :get, class: "button" %>
       <% end %>
+      <%= image_tag "search_icon.png", class:"header_icon" %>
+       <!--<%= form_tag('/items/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="search" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+              <% end %>
+        -->
     </div>
 
   </div>

@@ -48,11 +48,14 @@
     <% if @item.user_id == current_user.id %>
 <%= link_to "Edit", edit_item_path, method: :get, class:"edit_button" %><br><br><br>
 <%= link_to "Delete Item", "/items/#{ @item.id }", method: :delete, class:"delete_button" %>
-<% end %>
-
 <% else %>
   <%= link_to "Purchase", purchase_items_path, method: :get, class:"save_button" %>
 <% end %>
+<% else %>
+    <%= link_to "Purchase", new_user_session_path, method: :get, class:"save_button" %>
+
+<% end %>
+
 </div>
 
 </div>

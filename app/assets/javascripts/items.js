@@ -1,4 +1,7 @@
 $(function() {
-  $('.tagme').tagify();
+  $('.header_icon').click(function(){
+    $('.button').toggle();
+
+  });
 
 });

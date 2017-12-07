@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     collection do
       get 'all'
       get 'purchase'
+      get 'search'
     end
 
   end

@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
   def show
     @item=Item.find(params[:id])
-    @item_tag=Item.tagged_with(params[:category])
     @comments=Comment.all
     @comment=Comment.new
   end
@@ -36,6 +35,10 @@ class ItemsController < ApplicationController
   def destroy
     item=Item.find(params[:id])
     item.destroy
+  end
+
+  def search
+    @items=Item.where('title LIKE(?)', "%#{params[:keyword]}%")
   end
 
   def purchase
