@@ -65,7 +65,21 @@
       color: #D9E9EF;
     }
 
+.search_item{
+  margin:0 auto;
+}
 
+.siteHeader form{
+  text-align: center;
+  display: none;
+}
+
+.siteHeader input{
+  border:1px solid gray;
+  border-radius:4px;
+  padding:5px;
+  font-size:14px;
+}
 
 
 /* navbar-random */
@@ -137,7 +151,8 @@
 }
 
 .header_icon{
-  width:40px;
-  height:40px;
-
+  width:30px;
+  height:30px;
+  margin:0 0 0 20px;
+  padding:0 10px 0 0;
 }

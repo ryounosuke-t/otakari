@@ -18,7 +18,7 @@
   <!-- This section gets pushed to the left side-->
   <div class="siteHeader__section">
     <div class="siteHeader__item siteHeaderLogo">
-      <div class="fa fa-inbox">
+      <div class="fa fa-inbox"  >
         <!--
         <div>Icons made by <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         -->
@@ -28,23 +28,32 @@
 
   </div>
   <!-- This section gets pushed to the right side-->
-  <div class="siteHeader__section">
-    <div class="siteHeader__item siteHeaderButton">
+  <div class="siteHeader__section" >
+    <div class="siteHeader__item siteHeaderButton" >
       <% if user_signed_in? %>
       <%= link_to "Mypage", "/users/#{current_user.id}", method: :get, class: "button" %>
 
       <% else %>
       <%= link_to "Log in", new_user_session_path, method: :get, class: "button" %>
       <% end %>
-      <%= image_tag "search_icon.png", class:"header_icon" %>
-       <!--<%= form_tag('/items/search', method: :get) do %>
-                <input class="search__query" name="keyword" placeholder="search" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
-              <% end %>
-        -->
     </div>
 
+    <div class="siteHeader__item siteHeaderButton search_item">
+    <%= form_tag('/items/search', method: :get) do %>
+      <input class="search__query" name="keyword" placeholder="search" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="icon-search"></i></button></input>
+              <% end %>
   </div>
+      <div class="siteHeader__item siteHeaderButton">
+
+     <%= image_tag "search_icon.png", class:"header_icon" %>
+   </div>
+
+
+ </div>
+
 </div>
+
+
 
 
   </div>

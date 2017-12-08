@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20171206125718) do
 
+  create_table "add_image_to_users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "cart_items", force: :cascade do |t|
     t.integer  "item_id",    limit: 4
     t.integer  "quantity",   limit: 4

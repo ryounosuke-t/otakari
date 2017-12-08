@@ -1,7 +1,5 @@
 $(function() {
   $('.header_icon').click(function(){
-    $('.button').toggle();
-
+    $('.button, .fa-inbox, .siteHeader form').toggle();
   });
-
 });
