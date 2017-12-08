@@ -93,7 +93,11 @@
     <% if comment.item_id== @item.id %>
     <tr>
       <th>
+    <% if  comment.user.avatar.present? %>
+    <%= image_tag comment.user.avatar, class:"item_comments_image" %>
+    <% else %>
     <%= image_tag comment.user.image, class:"item_comments_image" %>
+    <% end %>
   </th>
   <td>
         <div class="item_comments_name">
