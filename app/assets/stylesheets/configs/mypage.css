@@ -34,8 +34,10 @@ a{
   border-radius: 50%;
   overflow: hidden;
   transition: .4s;
+  object-fit: cover;
 
 }
+
 
 .mypage_profile {
   width: 100%;
