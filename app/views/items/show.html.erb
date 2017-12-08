@@ -12,7 +12,12 @@
           </th>
           <td>
             <a href="/users/<%= @item.user_id %>/page">
-            <%= image_tag @item.user.image, class:"item_comments_image" %><br>
+            <% if @item.user.avatar.present? %>
+            <%= image_tag @item.user.avatar, class:"item_comments_image" %>
+            <% else %>
+            <%= image_tag @item.user.image, class:"item_comments_image" %>
+            <% end %>
+            <br>
             <%= @item.user.name %>
           </a>
           </td>
