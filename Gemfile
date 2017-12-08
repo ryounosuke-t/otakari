@@ -60,5 +60,5 @@ gem "omniauth"
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'acts-as-taggable-on'
-
+gem 'fog'
 
