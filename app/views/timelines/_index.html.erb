@@ -5,7 +5,7 @@
 <div class="box">
     <a href="/items/<%= item.id %>" >
     <div class="box_image">
-      <%= image_tag item.image, class:"item_box_image" %>
+      <%= image_tag item.image.to_s, class:"item_box_image" %>
     </div>
   </a>
     <div class="box_body">

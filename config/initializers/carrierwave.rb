@@ -14,7 +14,7 @@ CarrierWave.configure do |config|
     case Rails.env
     when 'development'
         config.fog_directory  = 'upload-test1021'
-        config.asset_host = 'https://s3.amazonaws.com/upload-test1021'
+        config.asset_host = 'https://s3.us-east-2.amazonaws.com/upload-test1021'
     when 'production'
         config.fog_directory  = 'upload-test1021'
         config.asset_host = 'https://s3.amazonaws.com/upload-test1021'
